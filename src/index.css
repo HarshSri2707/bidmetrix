@@ -1,0 +1,216 @@
+@import "tailwindcss";
+
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@600;700;800;900&display=swap');
+
+/* =========================
+   THEME CONFIG (Tailwind v4)
+   ========================= */
+@theme {
+  /* Primary */
+  --color-primary-50: #f0f9ff;
+  --color-primary-100: #e0f2fe;
+  --color-primary-200: #bae6fd;
+  --color-primary-300: #7dd3fc;
+  --color-primary-400: #38bdf8;
+  --color-primary-500: #0ea5e9;
+  --color-primary-600: #0284c7;
+  --color-primary-700: #0369a1;
+  --color-primary-800: #075985;
+  --color-primary-900: #0c4a6e;
+
+  /* Accent */
+  --color-accent-50: #fff7ed;
+  --color-accent-100: #ffedd5;
+  --color-accent-200: #fed7aa;
+  --color-accent-300: #fdba74;
+  --color-accent-400: #fb923c;
+  --color-accent-500: #f97316;
+  --color-accent-600: #ea580c;
+  --color-accent-700: #c2410c;
+  --color-accent-800: #9a3412;
+  --color-accent-900: #7c2d12;
+
+  /* Fonts */
+  --font-sans: "Inter", system-ui, sans-serif;
+  --font-display: "Poppins", system-ui, sans-serif;
+
+  /* Animations */
+  --animate-fade-in: fadeIn 0.6s ease-out forwards;
+  --animate-slide-up: slideUp 0.6s ease-out forwards;
+  --animate-scale-in: scaleIn 0.5s ease-out forwards;
+  --animate-shimmer: shimmer 2s infinite;
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  @keyframes slideUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes scaleIn {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+  }
+
+  @keyframes shimmer {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+  }
+}
+
+/* =========================
+   BASE STYLES
+   ========================= */
+@layer base {
+  * {
+    @apply scroll-smooth;
+  }
+
+  body {
+    @apply bg-white text-gray-900 antialiased;
+    font-family: var(--font-sans);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+}
+
+/* =========================
+   UTILITIES
+   ========================= */
+@layer utilities {
+  /* Layout */
+  .container-custom {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .section-padding {
+    @apply py-16 md:py-24 lg:py-32;
+  }
+
+  /* Text */
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .gradient-text {
+    @apply text-transparent bg-clip-text bg-gradient-to-r from-primary-600 to-accent-600;
+  }
+
+  .gradient-bg {
+    @apply bg-gradient-to-br from-primary-600 to-accent-500;
+  }
+
+  /* Line Clamp */
+  .line-clamp-1,
+  .line-clamp-2,
+  .line-clamp-3 {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  .line-clamp-1 { -webkit-line-clamp: 1; }
+  .line-clamp-2 { -webkit-line-clamp: 2; }
+  .line-clamp-3 { -webkit-line-clamp: 3; }
+
+  /* Animations */
+  .animate-fade-in { animation: var(--animate-fade-in); }
+  .animate-slide-up { animation: var(--animate-slide-up); }
+  .animate-scale-in { animation: var(--animate-scale-in); }
+  .animate-shimmer { animation: var(--animate-shimmer); }
+
+  .stagger-1 { animation-delay: 0.1s; }
+  .stagger-2 { animation-delay: 0.2s; }
+  .stagger-3 { animation-delay: 0.3s; }
+  .stagger-4 { animation-delay: 0.4s; }
+  .stagger-5 { animation-delay: 0.5s; }
+
+  /* Cards */
+  .card-hover {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .card-hover:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1),
+                0 10px 10px -5px rgba(0,0,0,0.04);
+  }
+
+  /* Image Zoom */
+  .image-zoom-hover { overflow: hidden; }
+
+  .image-zoom-hover img {
+    transition: transform 0.6s ease;
+  }
+
+  .image-zoom-hover:hover img {
+    transform: scale(1.08);
+  }
+
+  /* Glass */
+  .glass {
+    background: rgba(255,255,255,0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+
+  /* Performance */
+  .will-animate {
+    will-change: transform, opacity;
+  }
+
+  .gpu-accelerated {
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+  }
+}
+
+/* =========================
+   GLOBAL UX
+   ========================= */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #0ea5e9, #f97316);
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #0284c7, #ea580c);
+}
+
+/* Selection */
+::selection {
+  background-color: rgba(14, 165, 233, 0.2);
+  color: #0c4a6e;
+}
+
+/* Focus */
+*:focus-visible {
+  outline: 2px solid #0ea5e9;
+  outline-offset: 2px;
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
