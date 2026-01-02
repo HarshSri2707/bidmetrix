@@ -522,6 +522,7 @@ import { useScrollAnimation, useStaggerAnimation, useCountAnimation } from '../u
 import { heroData, problemStatement, uspData, howItWorksData, ctaData } from '../data/homeData';
 import { heroImages } from '../data/heroImages';
 import hero from '../assets/videos/hero.mp4';
+import photo from '../assets/photos/photo.png';
 
 const iconMap = {
   Target, Shield, BarChart3, Zap, TrendingUp
@@ -726,7 +727,7 @@ const Home = () => {
           highlightTitle={heroData.highlightTitle}
           subtitle={heroData.subtitle}
           videoSrc={hero}
-          posterSrc={heroImages.home?.poster}
+          posterSrc={photo}
         >
           {/* Buttons */}
           <div className="flex flex-col sm:flex-row gap-3">
