@@ -50,7 +50,11 @@ const HeroSection = ({
   </div>
   
   {/* Overlay - darker on mobile for better text readability */}
-  <div className="absolute inset-0 bg-gradient-to-r from-gray-900/95 via-gray-900/80 to-gray-900/70 md:from-gray-900/90 md:via-gray-900/70 md:to-gray-900/60"></div>
+  <div className="absolute inset-0 bg-gradient-to-r 
+  from-gray-900/55 via-gray-900/35 to-gray-900/25 
+  md:from-gray-900/45 md:via-gray-900/30 md:to-gray-900/20">
+</div>
+
   
   {/* Content - centered on mobile, left-aligned on desktop */}
   <div className="container-custom relative z-10 px-4 sm:px-6 lg:px-8">

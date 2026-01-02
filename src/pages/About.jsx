@@ -235,6 +235,245 @@
 
 
 
+// import React, { Suspense } from 'react';
+// import { Link } from 'react-router-dom';
+// import { Target, Shield, Users, Award, Globe, TrendingUp, ArrowRight } from 'lucide-react';
+// import SEO from '../components/seo/SEO';
+// import HeroSection from '../components/sections/HeroSection';
+// import LazyImage from '../components/ui/LazyImage';
+// import Card from '../components/ui/Card';
+// import Button from '../components/ui/Button';
+// import { SkeletonSection, SkeletonHero } from '../components/ui/SkeletonLoader';
+// import { useScrollAnimation, useStaggerAnimation } from '../utils/animations';
+// import { heroData, missionData, whoWeAreData, corePillarsData, valuesData, leadershipQuote } from '../data/aboutData';
+// import { heroImages } from '../data/heroImages';
+
+// const iconMap = { Target, Shield, Users, Award, Globe, TrendingUp };
+
+// const About = () => {
+//   const [missionRef, missionVisible] = useScrollAnimation({ once: true, threshold: 0.2 });
+//   const [whoWeAreRef, whoWeAreVisible] = useScrollAnimation({ once: true, threshold: 0.2 });
+//   const [pillarsRef, visiblePillars] = useStaggerAnimation(3, 200);
+//   const [valuesRef, visibleValues] = useStaggerAnimation(4, 150);
+//   const [quoteRef, quoteVisible] = useScrollAnimation({ once: true, threshold: 0.3 });
+//   const [ctaRef, ctaVisible] = useScrollAnimation({ once: true, threshold: 0.3 });
+
+//   return (
+//     <>
+//       <SEO 
+//         title="About BidMetrix.ai - Empowering Marketers with Intelligent Reach"
+//         description="Learn about BidMetrix.ai, the Indian DSP built for precision performance. We democratize access to premium inventory and enterprise-grade AI."
+//         keywords="about BidMetrix, DSP company, ad tech India, programmatic advertising platform"
+//       />
+
+//       {/* Hero Section */}
+//       <Suspense fallback={<SkeletonHero />}>
+//         <HeroSection
+//           title={heroData.title}
+//           highlightTitle={heroData.highlightTitle}
+//           subtitle={heroData.subtitle}
+//           image={heroImages.about}
+//           size="medium"
+//         />
+//       </Suspense>
+
+//       {/* Mission Statement */}
+//       <Suspense fallback={<SkeletonSection />}>
+//         <section className="py-12 sm:py-16 md:py-20 bg-white" ref={missionRef}>
+//           <div className="container-custom px-4 sm:px-6 lg:px-8">
+//             <div className="max-w-4xl mx-auto">
+//               <div className={`text-center mb-8 md:mb-10 transition-all duration-1000 ${missionVisible ? 'translate-y-0 opacity-100' : 'translate-y-12 opacity-0'}`}>
+//                 <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4 md:mb-5 px-4">
+//                   {missionData.title}
+//                 </h2>
+//                 <p className="text-lg sm:text-xl text-gray-600 leading-relaxed px-4 text-justify">
+//                   {missionData.subtitle}
+//                 </p>
+//               </div>
+
+//               <div className="space-y-4 md:space-y-5 px-4">
+//                 {missionData.content.map((paragraph, index) => (
+//                   <p
+//                     key={index}
+//                     className={`text-base sm:text-lg text-gray-600 leading-relaxed text-justify transition-all duration-1000 ${
+//                       missionVisible ? 'translate-y-0 opacity-100' : 'translate-y-12 opacity-0'
+//                     }`}
+//                     style={{ transitionDelay: `${(index + 1) * 200}ms` }}
+//                   >
+//                     {paragraph}
+//                   </p>
+//                 ))}
+//               </div>
+//             </div>
+//           </div>
+//         </section>
+//       </Suspense>
+
+//       {/* Who We Are */}
+//       <Suspense fallback={<SkeletonSection />}>
+//         <section className="py-12 sm:py-16 md:py-20 bg-gradient-to-b from-gray-50 to-white" ref={whoWeAreRef}>
+//           <div className="container-custom px-4 sm:px-6 lg:px-8">
+//             <div className={`text-center mb-10 md:mb-12 transition-all duration-1000 ${whoWeAreVisible ? 'translate-y-0 opacity-100' : 'translate-y-12 opacity-0'}`}>
+//               <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-3 sm:mb-4 px-4">
+//                 {whoWeAreData.title}
+//               </h2>
+//               <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto px-4 text-justify">
+//                 {whoWeAreData.subtitle}
+//               </p>
+//             </div>
+
+//             <div className="grid md:grid-cols-2 gap-8 md:gap-10 items-center mb-10 md:mb-12">
+//               <div className={`transition-all duration-1000 ${whoWeAreVisible ? 'translate-x-0 opacity-100 scale-100' : '-translate-x-12 opacity-0 scale-95'}`}
+//                    style={{ transitionDelay: '200ms' }}>
+//                 <div className="relative group">
+//                   <div className="absolute -inset-1 bg-gradient-to-r from-indigo-600 to-cyan-500 rounded-2xl blur opacity-25 group-hover:opacity-40 transition duration-500"></div>
+//                   <LazyImage 
+//                     src={whoWeAreData.image}
+//                     alt="Team working"
+//                     className="rounded-2xl shadow-xl relative transform transition-transform duration-500 group-hover:scale-[1.02]"
+//                     aspectRatio="4/3"
+//                   />
+//                 </div>
+//               </div>
+//               <div className={`transition-all duration-1000 px-4 md:px-0 ${whoWeAreVisible ? 'translate-x-0 opacity-100' : 'translate-x-12 opacity-0'}`}
+//                    style={{ transitionDelay: '400ms' }}>
+//                 <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4 md:mb-5">
+//                   Human Expertise Meets Machine Learning
+//                 </h3>
+//                 {whoWeAreData.content.map((paragraph, index) => (
+//                   <p key={index} className="text-base sm:text-lg text-gray-600 leading-relaxed mb-4 md:mb-5 text-justify">
+//                     {paragraph}
+//                   </p>
+//                 ))}
+//               </div>
+//             </div>
+//           </div>
+//         </section>
+//       </Suspense>
+
+//       {/* Core Pillars */}
+//       <Suspense fallback={<SkeletonSection />}>
+//         <section className="py-12 sm:py-16 md:py-20 bg-white" ref={pillarsRef}>
+//           <div className="container-custom px-4 sm:px-6 lg:px-8">
+//             <div className="text-center mb-10 md:mb-12">
+//               <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-3 sm:mb-4 px-4">
+//                 {corePillarsData.title}
+//               </h2>
+//               <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto px-4 text-justify">
+//                 {corePillarsData.subtitle}
+//               </p>
+//             </div>
+
+//             <div className="grid md:grid-cols-3 gap-6 md:gap-8">
+//               {corePillarsData.pillars.map((pillar, index) => {
+//                 const Icon = iconMap[pillar.icon];
+//                 const isVisible = visiblePillars.includes(index);
+//                 const colors = ['blue', 'indigo', 'cyan'];
+//                 const color = colors[index];
+//                 return (
+//                   <div
+//                     key={index}
+//                     className={`transition-all duration-1000 ${
+//                       isVisible ? 'translate-y-0 opacity-100 scale-100' : 'translate-y-16 opacity-0 scale-95'
+//                     }`}
+//                   >
+//                     <Card hover={true} className="h-full group">
+//                       <div className={`w-12 h-12 sm:w-14 sm:h-14 bg-${color}-100 rounded-xl flex items-center justify-center mb-4 sm:mb-5 transform transition-all duration-500 group-hover:scale-125 group-hover:rotate-12`}>
+//                         <Icon className={`w-6 h-6 sm:w-7 sm:h-7 text-${color}-600 transition-all duration-500`} />
+//                       </div>
+//                       <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3 sm:mb-4">
+//                         {pillar.title}
+//                       </h3>
+//                       <p className="text-sm sm:text-base text-gray-600 leading-relaxed text-justify">
+//                         {pillar.description}
+//                       </p>
+//                     </Card>
+//                   </div>
+//                 );
+//               })}
+//             </div>
+//           </div>
+//         </section>
+//       </Suspense>
+
+//       {/* Values */}
+//       <Suspense fallback={<SkeletonSection />}>
+//         <section className="py-12 sm:py-16 md:py-20 bg-gradient-to-b from-gray-50 to-white" ref={valuesRef}>
+//           <div className="container-custom px-4 sm:px-6 lg:px-8">
+//             <div className="text-center mb-10 md:mb-12">
+//               <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-3 sm:mb-4 px-4">
+//                 {valuesData.title}
+//               </h2>
+//             </div>
+
+//             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6">
+//               {valuesData.values.map((value, index) => {
+//                 const Icon = iconMap[value.icon];
+//                 const isVisible = visibleValues.includes(index);
+//                 return (
+//                   <div
+//                     key={index}
+//                     className={`transition-all duration-1000 ${
+//                       isVisible ? 'translate-y-0 opacity-100 scale-100' : 'translate-y-16 opacity-0 scale-95'
+//                     }`}
+//                   >
+//                     <div className="bg-white rounded-xl p-5 sm:p-6 shadow-sm border border-gray-100 hover:shadow-xl transition-all transform hover:-translate-y-3 duration-500 h-full group">
+//                       <div className="w-10 h-10 sm:w-12 sm:h-12 bg-indigo-100 rounded-lg flex items-center justify-center mb-3 sm:mb-4 transform transition-all duration-500 group-hover:rotate-[360deg] group-hover:scale-110">
+//                         <Icon className="w-5 h-5 sm:w-6 sm:h-6 text-indigo-600" />
+//                       </div>
+//                       <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-2">{value.title}</h3>
+//                       <p className="text-sm sm:text-base text-gray-600 text-justify">{value.description}</p>
+//                     </div>
+//                   </div>
+//                 );
+//               })}
+//             </div>
+//           </div>
+//         </section>
+//       </Suspense>
+
+//       {/* Leadership Quote */}
+//       <section className="py-12 sm:py-16 md:py-20 bg-gradient-to-br from-indigo-600 to-cyan-500" ref={quoteRef}>
+//         <div className="container-custom px-4 sm:px-6 lg:px-8">
+//           <div className={`max-w-4xl mx-auto text-center transition-all duration-1000 ${quoteVisible ? 'scale-100 opacity-100' : 'scale-90 opacity-0'}`}>
+//             <div className="text-5xl sm:text-6xl text-white/20 mb-4 sm:mb-5 animate-pulse">"</div>
+//             <blockquote className="text-xl sm:text-2xl md:text-3xl text-white font-medium mb-6 sm:mb-7 leading-relaxed px-4 text-justify">
+//               {leadershipQuote.quote}
+//             </blockquote>
+//             <cite className="text-base sm:text-lg text-indigo-200 not-italic">
+//               — {leadershipQuote.author}
+//             </cite>
+//           </div>
+//         </div>
+//       </section>
+
+//       {/* CTA Section */}
+//       <section className="py-12 sm:py-16 md:py-20 bg-white" ref={ctaRef}>
+//         <div className={`container-custom px-4 sm:px-6 lg:px-8 text-center transition-all duration-1000 ${ctaVisible ? 'translate-y-0 opacity-100' : 'translate-y-12 opacity-0'}`}>
+//           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4 sm:mb-5">
+//             Ready to Partner with Us?
+//           </h2>
+//           <p className="text-lg sm:text-xl text-gray-600 mb-6 sm:mb-7 max-w-2xl mx-auto text-justify">
+//             Join the growing community of performance marketers who trust BidMetrix.ai
+//           </p>
+//           <Link to="/contact">
+//             <Button 
+//               size="lg"
+//               icon={<ArrowRight className="w-4 h-4 sm:w-5 sm:h-5" />}
+//               className="transform transition-all duration-500 hover:scale-110 hover:shadow-2xl text-sm sm:text-base"
+//             >
+//               Request a Demo
+//             </Button>
+//           </Link>
+//         </div>
+//       </section>
+//     </>
+//   );
+// };
+
+// export default About;
+
+
 import React, { Suspense } from 'react';
 import { Link } from 'react-router-dom';
 import { Target, Shield, Users, Award, Globe, TrendingUp, ArrowRight } from 'lucide-react';
@@ -249,6 +488,201 @@ import { heroData, missionData, whoWeAreData, corePillarsData, valuesData, leade
 import { heroImages } from '../data/heroImages';
 
 const iconMap = { Target, Shield, Users, Award, Globe, TrendingUp };
+
+// Mission Section Component
+const MissionSection = ({ missionRef, missionVisible, missionData }) => (
+  <section className="py-8 sm:py-12 md:py-14 bg-white" ref={missionRef}>
+    <div className="container-custom px-4 sm:px-6 lg:px-8">
+      <div className="max-w-4xl mx-auto">
+        <div className={`text-center mb-6 md:mb-8 transition-all duration-1000 ${missionVisible ? 'translate-y-0 opacity-100' : 'translate-y-12 opacity-0'}`}>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-3 md:mb-4 px-4">
+            {missionData.title}
+          </h2>
+          <p className="text-base sm:text-lg md:text-xl text-gray-600 leading-relaxed px-4 text-justify">
+            {missionData.subtitle}
+          </p>
+        </div>
+
+        <div className="space-y-3 md:space-y-4 px-4">
+          {missionData.content.map((paragraph, index) => (
+            <p
+              key={index}
+              className={`text-sm sm:text-base md:text-lg text-gray-600 leading-relaxed text-justify transition-all duration-1000 ${
+                missionVisible ? 'translate-y-0 opacity-100' : 'translate-y-12 opacity-0'
+              }`}
+              style={{ transitionDelay: `${(index + 1) * 200}ms` }}
+            >
+              {paragraph}
+            </p>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+);
+
+// Who We Are Section Component
+const WhoWeAreSection = ({ whoWeAreRef, whoWeAreVisible, whoWeAreData }) => (
+  <section className="py-8 sm:py-12 md:py-14 bg-gradient-to-b from-gray-50 to-white" ref={whoWeAreRef}>
+    <div className="container-custom px-4 sm:px-6 lg:px-8">
+      <div className={`text-center mb-8 md:mb-10 transition-all duration-1000 ${whoWeAreVisible ? 'translate-y-0 opacity-100' : 'translate-y-12 opacity-0'}`}>
+        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-2 sm:mb-3 px-4">
+          {whoWeAreData.title}
+        </h2>
+        <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-3xl mx-auto px-4 text-justify">
+          {whoWeAreData.subtitle}
+        </p>
+      </div>
+
+      <div className="grid md:grid-cols-2 gap-6 md:gap-8 items-center mb-8 md:mb-10">
+        <div className={`transition-all duration-1000 ${whoWeAreVisible ? 'translate-x-0 opacity-100 scale-100' : '-translate-x-12 opacity-0 scale-95'}`}
+             style={{ transitionDelay: '200ms' }}>
+          <div className="relative group">
+            <div className="absolute -inset-1 bg-gradient-to-r from-indigo-600 to-cyan-500 rounded-2xl blur opacity-25 group-hover:opacity-40 transition duration-500"></div>
+            <LazyImage 
+              src={whoWeAreData.image}
+              alt="Team working"
+              className="rounded-2xl shadow-xl relative transform transition-transform duration-500 group-hover:scale-[1.02]"
+              aspectRatio="4/3"
+            />
+          </div>
+        </div>
+        <div className={`transition-all duration-1000 px-4 md:px-0 ${whoWeAreVisible ? 'translate-x-0 opacity-100' : 'translate-x-12 opacity-0'}`}
+             style={{ transitionDelay: '400ms' }}>
+          <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-3 md:mb-4">
+            Human Expertise Meets Machine Learning
+          </h3>
+          {whoWeAreData.content.map((paragraph, index) => (
+            <p key={index} className="text-sm sm:text-base md:text-lg text-gray-600 leading-relaxed mb-3 md:mb-4 text-justify">
+              {paragraph}
+            </p>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+);
+
+// Core Pillars Section Component
+const CorePillarsSection = ({ pillarsRef, visiblePillars, corePillarsData, iconMap }) => (
+  <section className="py-8 sm:py-12 md:py-14 bg-white" ref={pillarsRef}>
+    <div className="container-custom px-4 sm:px-6 lg:px-8">
+      <div className="text-center mb-8 md:mb-10">
+        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-2 sm:mb-3 px-4">
+          {corePillarsData.title}
+        </h2>
+        <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-3xl mx-auto px-4 text-justify">
+          {corePillarsData.subtitle}
+        </p>
+      </div>
+
+      <div className="grid md:grid-cols-3 gap-5 md:gap-6">
+        {corePillarsData.pillars.map((pillar, index) => {
+          const Icon = iconMap[pillar.icon];
+          const isVisible = visiblePillars.includes(index);
+          const colors = ['blue', 'indigo', 'cyan'];
+          const color = colors[index];
+          return (
+            <div
+              key={index}
+              className={`transition-all duration-1000 ${
+                isVisible ? 'translate-y-0 opacity-100 scale-100' : 'translate-y-16 opacity-0 scale-95'
+              }`}
+            >
+              <Card hover={true} className="h-full group">
+                <div className={`w-11 h-11 sm:w-12 sm:h-12 md:w-13 md:h-13 bg-${color}-100 rounded-xl flex items-center justify-center mb-3 sm:mb-4 transform transition-all duration-500 group-hover:scale-125 group-hover:rotate-12`}>
+                  <Icon className={`w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 text-${color}-600 transition-all duration-500`} />
+                </div>
+                <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-gray-900 mb-2 sm:mb-3">
+                  {pillar.title}
+                </h3>
+                <p className="text-sm sm:text-base text-gray-600 leading-relaxed text-justify">
+                  {pillar.description}
+                </p>
+              </Card>
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  </section>
+);
+
+// Values Section Component
+const ValuesSection = ({ valuesRef, visibleValues, valuesData, iconMap }) => (
+  <section className="py-8 sm:py-12 md:py-14 bg-gradient-to-b from-gray-50 to-white" ref={valuesRef}>
+    <div className="container-custom px-4 sm:px-6 lg:px-8">
+      <div className="text-center mb-8 md:mb-10">
+        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-2 sm:mb-3 px-4">
+          {valuesData.title}
+        </h2>
+      </div>
+
+      <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
+        {valuesData.values.map((value, index) => {
+          const Icon = iconMap[value.icon];
+          const isVisible = visibleValues.includes(index);
+          return (
+            <div
+              key={index}
+              className={`transition-all duration-1000 ${
+                isVisible ? 'translate-y-0 opacity-100 scale-100' : 'translate-y-16 opacity-0 scale-95'
+              }`}
+            >
+              <div className="bg-white rounded-xl p-4 sm:p-5 shadow-sm border border-gray-100 hover:shadow-xl transition-all transform hover:-translate-y-3 duration-500 h-full group">
+                <div className="w-10 h-10 sm:w-11 sm:h-11 bg-indigo-100 rounded-lg flex items-center justify-center mb-2 sm:mb-3 transform transition-all duration-500 group-hover:rotate-[360deg] group-hover:scale-110">
+                  <Icon className="w-5 h-5 sm:w-6 sm:h-6 text-indigo-600" />
+                </div>
+                <h3 className="text-base sm:text-lg md:text-xl font-bold text-gray-900 mb-1.5 sm:mb-2">{value.title}</h3>
+                <p className="text-sm sm:text-base text-gray-600 text-justify">{value.description}</p>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  </section>
+);
+
+// Leadership Quote Section Component
+const LeadershipQuoteSection = ({ quoteRef, quoteVisible, leadershipQuote }) => (
+  <section className="py-8 sm:py-12 md:py-14 bg-gradient-to-br from-indigo-600 to-cyan-500" ref={quoteRef}>
+    <div className="container-custom px-4 sm:px-6 lg:px-8">
+      <div className={`max-w-4xl mx-auto text-center transition-all duration-1000 ${quoteVisible ? 'scale-100 opacity-100' : 'scale-90 opacity-0'}`}>
+        {/* <div className="text-4xl sm:text-5xl md:text-6xl text-white/20 mb-3 sm:mb-4 animate-pulse leading-none">"</div> */}
+        <blockquote className="text-lg sm:text-xl md:text-2xl text-white font-medium mb-4 sm:mb-5 leading-relaxed px-4 text-justify">
+          "{leadershipQuote.quote}"
+        </blockquote>
+        <cite className="text-sm sm:text-base md:text-lg text-indigo-200 not-italic">
+          — {leadershipQuote.author}
+        </cite>
+      </div>
+    </div>
+  </section>
+);
+
+// CTA Section Component
+const CTASection = ({ ctaRef, ctaVisible }) => (
+  <section className="py-8 sm:py-12 md:py-14 bg-white" ref={ctaRef}>
+    <div className={`container-custom px-4 sm:px-6 lg:px-8 text-center transition-all duration-1000 ${ctaVisible ? 'translate-y-0 opacity-100' : 'translate-y-12 opacity-0'}`}>
+      <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-3 sm:mb-4">
+        Ready to Partner with Us?
+      </h2>
+      <p className="text-base sm:text-lg md:text-xl text-gray-600 mb-5 sm:mb-6 max-w-2xl mx-auto text-justify">
+        Join the growing community of performance marketers who trust BidMetrix.ai
+      </p>
+      <Link to="/contact">
+        <Button 
+          size="lg"
+          icon={<ArrowRight className="w-4 h-4 sm:w-5 sm:h-5" />}
+          className="transform transition-all duration-500 hover:scale-110 hover:shadow-2xl text-sm sm:text-base"
+        >
+          Request a Demo
+        </Button>
+      </Link>
+    </div>
+  </section>
+);
 
 const About = () => {
   const [missionRef, missionVisible] = useScrollAnimation({ once: true, threshold: 0.2 });
@@ -279,194 +713,54 @@ const About = () => {
 
       {/* Mission Statement */}
       <Suspense fallback={<SkeletonSection />}>
-        <section className="section-padding bg-white" ref={missionRef}>
-          <div className="container-custom px-4 sm:px-6 lg:px-8">
-            <div className="max-w-4xl mx-auto">
-              <div className={`text-center mb-8 md:mb-12 transition-all duration-1000 ${missionVisible ? 'translate-y-0 opacity-100' : 'translate-y-12 opacity-0'}`}>
-                <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4 md:mb-6 px-4">
-                  {missionData.title}
-                </h2>
-                <p className="text-lg sm:text-xl text-gray-600 leading-relaxed px-4">
-                  {missionData.subtitle}
-                </p>
-              </div>
-
-              <div className="space-y-5 md:space-y-6 px-4">
-                {missionData.content.map((paragraph, index) => (
-                  <p
-                    key={index}
-                    className={`text-base sm:text-lg text-gray-600 leading-relaxed transition-all duration-1000 ${
-                      missionVisible ? 'translate-y-0 opacity-100' : 'translate-y-12 opacity-0'
-                    }`}
-                    style={{ transitionDelay: `${(index + 1) * 200}ms` }}
-                  >
-                    {paragraph}
-                  </p>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
+        <MissionSection 
+          missionRef={missionRef}
+          missionVisible={missionVisible}
+          missionData={missionData}
+        />
       </Suspense>
 
       {/* Who We Are */}
       <Suspense fallback={<SkeletonSection />}>
-        <section className="section-padding bg-gradient-to-b from-gray-50 to-white" ref={whoWeAreRef}>
-          <div className="container-custom px-4 sm:px-6 lg:px-8">
-            <div className={`text-center mb-12 md:mb-16 transition-all duration-1000 ${whoWeAreVisible ? 'translate-y-0 opacity-100' : 'translate-y-12 opacity-0'}`}>
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-3 sm:mb-4 px-4">
-                {whoWeAreData.title}
-              </h2>
-              <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto px-4">
-                {whoWeAreData.subtitle}
-              </p>
-            </div>
-
-            <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center mb-12 md:mb-16">
-              <div className={`transition-all duration-1000 ${whoWeAreVisible ? 'translate-x-0 opacity-100 scale-100' : '-translate-x-12 opacity-0 scale-95'}`}
-                   style={{ transitionDelay: '200ms' }}>
-                <div className="relative group">
-                  <div className="absolute -inset-1 bg-gradient-to-r from-indigo-600 to-cyan-500 rounded-2xl blur opacity-25 group-hover:opacity-40 transition duration-500"></div>
-                  <LazyImage 
-                    src={whoWeAreData.image}
-                    alt="Team working"
-                    className="rounded-2xl shadow-xl relative transform transition-transform duration-500 group-hover:scale-[1.02]"
-                    aspectRatio="4/3"
-                  />
-                </div>
-              </div>
-              <div className={`transition-all duration-1000 px-4 md:px-0 ${whoWeAreVisible ? 'translate-x-0 opacity-100' : 'translate-x-12 opacity-0'}`}
-                   style={{ transitionDelay: '400ms' }}>
-                <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4 md:mb-6">
-                  Human Expertise Meets Machine Learning
-                </h3>
-                {whoWeAreData.content.map((paragraph, index) => (
-                  <p key={index} className="text-base sm:text-lg text-gray-600 leading-relaxed mb-4 md:mb-6">
-                    {paragraph}
-                  </p>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
+        <WhoWeAreSection 
+          whoWeAreRef={whoWeAreRef}
+          whoWeAreVisible={whoWeAreVisible}
+          whoWeAreData={whoWeAreData}
+        />
       </Suspense>
 
       {/* Core Pillars */}
       <Suspense fallback={<SkeletonSection />}>
-        <section className="section-padding bg-white" ref={pillarsRef}>
-          <div className="container-custom px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-12 md:mb-16">
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-3 sm:mb-4 px-4">
-                {corePillarsData.title}
-              </h2>
-              <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto px-4">
-                {corePillarsData.subtitle}
-              </p>
-            </div>
-
-            <div className="grid md:grid-cols-3 gap-6 md:gap-8">
-              {corePillarsData.pillars.map((pillar, index) => {
-                const Icon = iconMap[pillar.icon];
-                const isVisible = visiblePillars.includes(index);
-                const colors = ['blue', 'indigo', 'cyan'];
-                const color = colors[index];
-                return (
-                  <div
-                    key={index}
-                    className={`transition-all duration-1000 ${
-                      isVisible ? 'translate-y-0 opacity-100 scale-100' : 'translate-y-16 opacity-0 scale-95'
-                    }`}
-                  >
-                    <Card hover={true} className="h-full group">
-                      <div className={`w-12 h-12 sm:w-14 sm:h-14 bg-${color}-100 rounded-xl flex items-center justify-center mb-4 sm:mb-6 transform transition-all duration-500 group-hover:scale-125 group-hover:rotate-12`}>
-                        <Icon className={`w-6 h-6 sm:w-7 sm:h-7 text-${color}-600 transition-all duration-500`} />
-                      </div>
-                      <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3 sm:mb-4">
-                        {pillar.title}
-                      </h3>
-                      <p className="text-sm sm:text-base text-gray-600 leading-relaxed">
-                        {pillar.description}
-                      </p>
-                    </Card>
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-        </section>
+        <CorePillarsSection 
+          pillarsRef={pillarsRef}
+          visiblePillars={visiblePillars}
+          corePillarsData={corePillarsData}
+          iconMap={iconMap}
+        />
       </Suspense>
 
       {/* Values */}
       <Suspense fallback={<SkeletonSection />}>
-        <section className="section-padding bg-gradient-to-b from-gray-50 to-white" ref={valuesRef}>
-          <div className="container-custom px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-12 md:mb-16">
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-3 sm:mb-4 px-4">
-                {valuesData.title}
-              </h2>
-            </div>
-
-            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6">
-              {valuesData.values.map((value, index) => {
-                const Icon = iconMap[value.icon];
-                const isVisible = visibleValues.includes(index);
-                return (
-                  <div
-                    key={index}
-                    className={`transition-all duration-1000 ${
-                      isVisible ? 'translate-y-0 opacity-100 scale-100' : 'translate-y-16 opacity-0 scale-95'
-                    }`}
-                  >
-                    <div className="bg-white rounded-xl p-5 sm:p-6 shadow-sm border border-gray-100 hover:shadow-xl transition-all transform hover:-translate-y-3 duration-500 h-full group">
-                      <div className="w-10 h-10 sm:w-12 sm:h-12 bg-indigo-100 rounded-lg flex items-center justify-center mb-3 sm:mb-4 transform transition-all duration-500 group-hover:rotate-[360deg] group-hover:scale-110">
-                        <Icon className="w-5 h-5 sm:w-6 sm:h-6 text-indigo-600" />
-                      </div>
-                      <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-2">{value.title}</h3>
-                      <p className="text-sm sm:text-base text-gray-600">{value.description}</p>
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-        </section>
+        <ValuesSection 
+          valuesRef={valuesRef}
+          visibleValues={visibleValues}
+          valuesData={valuesData}
+          iconMap={iconMap}
+        />
       </Suspense>
 
       {/* Leadership Quote */}
-      <section className="section-padding bg-gradient-to-br from-indigo-600 to-cyan-500" ref={quoteRef}>
-        <div className="container-custom px-4 sm:px-6 lg:px-8">
-          <div className={`max-w-4xl mx-auto text-center transition-all duration-1000 ${quoteVisible ? 'scale-100 opacity-100' : 'scale-90 opacity-0'}`}>
-            <div className="text-5xl sm:text-6xl text-white/20 mb-4 sm:mb-6 animate-pulse">"</div>
-            <blockquote className="text-xl sm:text-2xl md:text-3xl text-white font-medium mb-6 sm:mb-8 leading-relaxed px-4">
-              {leadershipQuote.quote}
-            </blockquote>
-            <cite className="text-base sm:text-lg text-indigo-200 not-italic">
-              — {leadershipQuote.author}
-            </cite>
-          </div>
-        </div>
-      </section>
+      <LeadershipQuoteSection 
+        quoteRef={quoteRef}
+        quoteVisible={quoteVisible}
+        leadershipQuote={leadershipQuote}
+      />
 
       {/* CTA Section */}
-      <section className="section-padding bg-white" ref={ctaRef}>
-        <div className={`container-custom px-4 sm:px-6 lg:px-8 text-center transition-all duration-1000 ${ctaVisible ? 'translate-y-0 opacity-100' : 'translate-y-12 opacity-0'}`}>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4 sm:mb-6">
-            Ready to Partner with Us?
-          </h2>
-          <p className="text-lg sm:text-xl text-gray-600 mb-6 sm:mb-8 max-w-2xl mx-auto">
-            Join the growing community of performance marketers who trust BidMetrix.ai
-          </p>
-          <Link to="/contact">
-            <Button 
-              size="lg"
-              icon={<ArrowRight className="w-4 h-4 sm:w-5 sm:h-5" />}
-              className="transform transition-all duration-500 hover:scale-110 hover:shadow-2xl text-sm sm:text-base"
-            >
-              Request a Demo
-            </Button>
-          </Link>
-        </div>
-      </section>
+      <CTASection 
+        ctaRef={ctaRef}
+        ctaVisible={ctaVisible}
+      />
     </>
   );
 };
