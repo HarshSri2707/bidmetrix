@@ -519,7 +519,7 @@ const Resources = () => {
                   {categories.map((category, index) => (
                     <button
                       key={index}
-                      className="px-4 sm:px-6 py-3 sm:py-4 bg-white border border-gray-200 rounded-xl hover:border-indigo-500 hover:bg-indigo-50 transition-all text-sm sm:text-base text-gray-700 hover:text-indigo-600 font-medium transform hover:scale-105 hover:shadow-lg duration-300"
+                      className="px-4 sm:px-6 py-3 sm:py-4 bg-white border border-gray-200 rounded-xl hover:border-indigo-500 hover:bg-indigo-50 transition-all text-sm sm:text-base text-gray-700 hover:text-indigo-600 font-medium transform  hover:shadow-lg duration-300"
                     >
                       {category}
                     </button>
@@ -547,7 +547,7 @@ const Resources = () => {
                 placeholder="Enter your email"
                 className="flex-1 px-6 py-4 rounded-lg focus:ring-2 focus:ring-white focus:outline-none"
               />
-              <button className="px-8 py-4 bg-white text-indigo-600 font-semibold rounded-lg hover:bg-gray-100 transition-all transform hover:scale-105 whitespace-nowrap">
+              <button className="px-8 py-4 bg-white text-indigo-600 font-semibold rounded-lg hover:bg-gray-100 transition-all transform  whitespace-nowrap">
                 Subscribe
               </button>
             </div>

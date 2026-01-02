@@ -510,6 +510,7 @@
 
 // export default Home;
 
+
 import React, { Suspense } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Target, Shield, BarChart3, TrendingUp, CheckCircle, Zap } from 'lucide-react';
@@ -692,7 +693,7 @@ const CTASection = ({ ctaRef, ctaVisible, ctaData }) => (
         <Button 
           variant="secondary" 
           size="lg"
-          className="bg-white text-indigo-600 hover:bg-gray-100 transform transition-all duration-500 hover:scale-110 hover:shadow-2xl text-sm sm:text-base"
+          className="bg-white text-indigo-600 hover:bg-gray-100 transform transition-all duration-500  hover:shadow-2xl text-sm sm:text-base"
           icon={<ArrowRight className="w-4 h-4 sm:w-5 sm:h-5" />}
         >
           {ctaData.buttonText}
@@ -735,7 +736,7 @@ const Home = () => {
               <Button 
                 size="lg" 
                 icon={<ArrowRight className="w-4 h-4 sm:w-5 sm:h-5" />}
-                className="w-full sm:w-auto text-sm sm:text-base transform transition-all duration-500 hover:scale-110 hover:shadow-2xl"
+                className="w-full sm:w-auto text-sm sm:text-base transform transition-all duration-500  hover:shadow-2xl"
               >
                 Request a Demo
               </Button>
@@ -744,7 +745,7 @@ const Home = () => {
               <Button 
                 variant="secondary" 
                 size="lg"
-                className="w-full sm:w-auto text-sm sm:text-base transform transition-all duration-500 hover:scale-110 hover:shadow-2xl"
+                className="w-full sm:w-auto text-sm sm:text-base transform transition-all duration-500  hover:shadow-2xl"
               >
                 Explore Solutions
               </Button>

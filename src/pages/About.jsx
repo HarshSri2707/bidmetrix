@@ -675,7 +675,7 @@ const CTASection = ({ ctaRef, ctaVisible }) => (
         <Button 
           size="lg"
           icon={<ArrowRight className="w-4 h-4 sm:w-5 sm:h-5" />}
-          className="transform transition-all duration-500 hover:scale-110 hover:shadow-2xl text-sm sm:text-base"
+          className="transform transition-all duration-500  hover:shadow-2xl text-sm sm:text-base"
         >
           Request a Demo
         </Button>

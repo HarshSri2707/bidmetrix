@@ -545,7 +545,7 @@ const UserAcquisitionSection = ({ uaRef, uaVisible, uaFeaturesRef, visibleUaFeat
             {userAcquisitionData.description}
           </p>
           <Link to="/contact">
-            <Button icon={<ArrowRight className="w-5 h-5" />} className="transform transition-all duration-500 hover:scale-110 hover:shadow-xl">
+            <Button icon={<ArrowRight className="w-5 h-5" />} className="transform transition-all duration-500  hover:shadow-xl">
               Get Started
             </Button>
           </Link>
@@ -633,7 +633,7 @@ const RetargetingSection = ({ retargetingRef, retargetingVisible, retargetingFea
           <p className="text-base sm:text-lg md:text-xl text-gray-600 mb-4 md:mb-5 leading-relaxed text-justify">{retargetingData.description}</p>
           <p className="text-sm sm:text-base text-gray-600 mb-6 md:mb-7 text-justify">{retargetingData.additionalInfo}</p>
           <Link to="/contact">
-            <Button icon={<ArrowRight className="w-5 h-5" />} className="transform transition-all duration-500 hover:scale-110 hover:shadow-xl">
+            <Button icon={<ArrowRight className="w-5 h-5" />} className="transform transition-all duration-500  hover:shadow-xl">
               Learn More
             </Button>
           </Link>
@@ -669,7 +669,7 @@ const BrandSafetySection = ({ brandSafetyRef, brandSafetyVisible, protectionRef,
           <p className="text-base sm:text-lg md:text-xl text-gray-600 mb-4 md:mb-5 leading-relaxed text-justify">{brandSafetyData.description}</p>
           <p className="text-sm sm:text-base text-gray-600 mb-6 md:mb-7 text-justify">{brandSafetyData.additionalInfo}</p>
           <Link to="/contact">
-            <Button icon={<ArrowRight className="w-5 h-5" />} className="transform transition-all duration-500 hover:scale-110 hover:shadow-xl">
+            <Button icon={<ArrowRight className="w-5 h-5" />} className="transform transition-all duration-500  hover:shadow-xl">
               Protect Your Ads
             </Button>
           </Link>
@@ -721,7 +721,7 @@ const CTASection = ({ ctaRef, ctaVisible, ctaData }) => (
       <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 md:mb-5">{ctaData.title}</h2>
       <p className="text-base sm:text-lg md:text-xl text-indigo-100 mb-6 md:mb-7 max-w-2xl mx-auto text-justify">{ctaData.subtitle}</p>
       <Link to="/contact">
-        <Button variant="secondary" size="lg" className="bg-white text-indigo-600 hover:bg-gray-100 transform transition-all duration-500 hover:scale-110 hover:shadow-2xl" icon={<ArrowRight className="w-5 h-5" />}>
+        <Button variant="secondary" size="lg" className="bg-white text-indigo-600 hover:bg-gray-100 transform transition-all duration-500  hover:shadow-2xl" icon={<ArrowRight className="w-5 h-5" />}>
           {ctaData.buttonText}
         </Button>
       </Link>

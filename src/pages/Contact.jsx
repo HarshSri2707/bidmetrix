@@ -300,7 +300,7 @@ const Contact = () => {
 
                     <Button 
                       onClick={handleSubmit}
-                      className="w-full transform transition-all duration-500 hover:scale-105 hover:shadow-xl"
+                      className="w-full transform transition-all duration-500  hover:shadow-xl"
                       size="lg"
                       disabled={loading}
                       icon={loading ? null : <ArrowRight className="w-5 h-5" />}
