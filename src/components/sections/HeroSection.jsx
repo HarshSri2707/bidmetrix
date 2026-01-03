@@ -38,6 +38,8 @@ const HeroSection = ({
     }
   };
 
+  
+
   return (
    <section className="relative h-96 md:h-[28rem] flex items-center overflow-hidden">
   {/* Image */}
@@ -59,7 +61,7 @@ const HeroSection = ({
   {/* Content - centered on mobile, left-aligned on desktop */}
   <div className="container-custom relative z-10 px-4 sm:px-6 lg:px-8">
     <div className="text-center md:text-left max-w-3xl mx-auto md:mx-0">
-      <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-4">
+      <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4">
         {title}
         {highlightTitle && (
          <span className="block text-white/90 mt-2">
@@ -68,7 +70,7 @@ const HeroSection = ({
 
         )}
       </h1>
-      <p className="text-lg sm:text-xl text-gray-300 max-w-2xl mx-auto md:mx-0">
+      <p className="text-lg sm:text-xl text-white max-w-2xl mx-auto md:mx-0">
         {subtitle}
       </p>
     </div>

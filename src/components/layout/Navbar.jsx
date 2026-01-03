@@ -284,10 +284,10 @@ const Navbar = () => {
             </Link>
 
             <Link
-              to="/about"
+              to="/aboutus"
               className="relative text-gray-700 font-medium group transition-colors hover:text-indigo-600"
             >
-              About
+              About Us
               <span
                 className={`absolute left-0 -bottom-1 h-0.5 w-full bg-indigo-600 scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300
                 ${isActive("/about") ? "scale-x-100" : ""}`}
@@ -415,11 +415,11 @@ const Navbar = () => {
                 Home
               </Link>
               <Link
-                to="/about"
+                to="/aboutus"
                 onClick={() => setIsOpen(false)}
                 className="px-4 py-2 rounded-lg hover:bg-indigo-50 hover:text-indigo-600 transition-all"
               >
-                About
+                About Us
               </Link>
 
               {/* Mobile Solutions */}

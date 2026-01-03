@@ -3,12 +3,13 @@ import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-route
 import Navbar from './components/layout/Navbar';
 import Footer from './components/layout/Footer';
 import Home from './pages/Home';
-import About from './pages/About';
+
 import Solutions from './pages/Solutions';
 import Channels from './pages/Channels';
 import Resources from './pages/Resources';
 import Contact from './pages/Contact';
 import PrivacyPolicy from './pages/PrivacyPolicy';
+import AboutUs from './pages/AboutUs';
 
 // Scroll to top on route change
 function ScrollToTop() {
@@ -41,7 +42,7 @@ function App() {
         <main className="flex-grow pt-16">
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
+            <Route path="/aboutus" element={<AboutUs />} />
             <Route path="/solutions" element={<Solutions />} />
             <Route path="/channels" element={<Channels />} />
             <Route path="/resources" element={<Resources />} />
