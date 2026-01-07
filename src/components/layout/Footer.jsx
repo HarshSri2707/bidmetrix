@@ -45,6 +45,9 @@ const Footer = () => {
                 <Link to="/channels" className="hover:text-indigo-400 transition-colors">Channels</Link>
               </li>
               <li>
+                <Link to="/technology" className="hover:text-indigo-400 transition-colors">Technology</Link>
+              </li>
+              <li>
                 <Link to="/resources" className="hover:text-indigo-400 transition-colors">Resources</Link>
               </li>
             </ul>

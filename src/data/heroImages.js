@@ -9,7 +9,9 @@ export const heroImages = {
   
   solutions: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1920&q=80&auto=format&fit=crop", // Analytics dashboard
   
-  channels: "https://images.unsplash.com/photo-1563986768609-322da13575f3?w=1920&q=80&auto=format&fit=crop", // Multiple devices/channels
+  channels: "https://images.unsplash.com/photo-1563986768609-322da13575f3?w=1920&q=80&auto=format&fit=crop",
+  
+  technology: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=1920&q=80&auto=format&fit=crop",// Multiple devices/channels
   
   resources: "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=1920&q=80&auto=format&fit=crop", // Reading/Learning
   

@@ -1,8 +1,7 @@
 export const heroData = {
   title: "Resources &",
   highlightTitle: "Insights",
-  subtitle: "Stay ahead with the latest trends, strategies, and insights in performance marketing",
-  image: "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=1920&q=80"
+  subtitle: "Stay ahead with the latest trends, strategies, and insights in performance marketing"
 };
 
 export const blogsData = [
@@ -60,7 +59,7 @@ export const blogsData = [
     id: 6,
     title: "The Rise of Connected TV Advertising in India",
     excerpt: "How CTV is changing the advertising landscape and what brands need to know to capitalize on this growing opportunity.",
-    image: "https://images.unsplash.com/photo-1593784991095-a205069470b6?w=600&q=80",
+    image: "https://images.unsplash.com/photo-1593784991095-a205069470b6?w=800&q=80",
     category: "Trends",
     date: "Nov 15, 2024",
     readTime: "8 min read",
@@ -83,3 +82,67 @@ export const newsletterData = {
   title: "Stay Updated",
   subtitle: "Get the latest insights, trends, and best practices delivered to your inbox"
 };
+
+export const caseStudiesData = [
+  {
+    id: 1,
+    title: "EdTech Platform Achieves 3.2x ROAS with AI-Powered User Acquisition",
+    client: "Leading Online Education Platform",
+    industry: "EdTech",
+    challenge: "High customer acquisition costs and low conversion rates from generic ad platforms",
+    solution: "Implemented BidMetrix.ai's AI Bid Engine with lookalike modeling and CPA optimization",
+    results: [
+      "3.2x increase in ROAS",
+      "47% reduction in Cost Per Acquisition",
+      "2.5x growth in quality leads",
+      "Campaign ROI improved from 1.8x to 5.7x"
+    ],
+    image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&q=80",
+    metrics: {
+      roasImprovement: "3.2x",
+      cpaReduction: "47%",
+      leadQuality: "2.5x"
+    }
+  },
+  {
+    id: 2,
+    title: "E-Commerce Brand Scales Revenue 5x with Precision Retargeting",
+    client: "Fast-Growing Fashion E-Commerce",
+    industry: "E-Commerce",
+    challenge: "Cart abandonment rate of 78% and inefficient retargeting spend",
+    solution: "Deployed dynamic retargeting campaigns with frequency capping and audience segmentation",
+    results: [
+      "5x revenue growth in 3 months",
+      "Cart recovery rate increased to 42%",
+      "65% reduction in wasted ad spend",
+      "Average order value up 34%"
+    ],
+    image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&q=80",
+    metrics: {
+      revenueGrowth: "5x",
+      cartRecovery: "42%",
+      wasteReduction: "65%"
+    }
+  },
+  {
+    id: 3,
+    title: "FinTech App Drives 200K+ Quality Installs with Mobile-First Strategy",
+    client: "Digital Lending Platform",
+    industry: "FinTech",
+    challenge: "Low app install quality and high user drop-off rates",
+    solution: "Leveraged BidMetrix.ai's mobile & in-app inventory with CPI optimization",
+    results: [
+      "200,000+ high-quality app installs",
+      "Install-to-registration rate: 68%",
+      "Cost per install reduced by 52%",
+      "30-day retention improved to 45%"
+    ],
+    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80",
+    metrics: {
+      installs: "200K+",
+      cpiReduction: "52%",
+      retention: "45%"
+    }
+  }
+];
+
