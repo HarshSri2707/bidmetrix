@@ -13,6 +13,7 @@ import Button from '../components/ui/Button';
 import { SkeletonSection, SkeletonHero } from '../components/ui/SkeletonLoader';
 import { useScrollAnimation, useStaggerAnimation } from '../utils/animations';
 import { heroImages } from '../data/heroImages';
+import { pageSEO } from '../data/seoData';
 
 const Channels = () => {
   const location = useLocation();
@@ -38,10 +39,12 @@ const Channels = () => {
 
   return (
     <>
-      <SEO 
-        title="Advertising Channels - Mobile, Video, Display | BidMetrix.ai"
-        description="Reach your audience across mobile, in-app, video, CTV, native and display channels with BidMetrix.ai programmatic platform"
-        keywords="mobile advertising, in-app ads, video advertising, CTV, connected TV, native ads, display advertising"
+        <SEO 
+        title={pageSEO.channels.title}
+        description={pageSEO.channels.description}
+        keywords={pageSEO.channels.keywords}
+        canonical={pageSEO.channels.canonical}
+        type={pageSEO.channels.ogType}
       />
 
       {/* Hero Section */}

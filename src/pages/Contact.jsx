@@ -8,6 +8,7 @@ import Button from '../components/ui/Button';
 import { SkeletonSection, SkeletonHero } from '../components/ui/SkeletonLoader';
 import { useScrollAnimation, useStaggerAnimation } from '../utils/animations';
 import { heroImages } from '../data/heroImages';
+import { pageSEO } from '../data/seoData';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -73,10 +74,12 @@ const Contact = () => {
 
   return (
     <>
-      <SEO 
-        title="Contact Us - Request a Demo | BidMetrix.ai"
-        description="Get in touch with BidMetrix.ai. Request a demo and discover how our intelligent DSP can transform your performance marketing"
-        keywords="contact BidMetrix, request demo, DSP demo, performance marketing consultation"
+        <SEO 
+        title={pageSEO.contact.title}
+        description={pageSEO.contact.description}
+        keywords={pageSEO.contact.keywords}
+        canonical={pageSEO.contact.canonical}
+        type={pageSEO.contact.ogType}
       />
 
       {/* Hero Section */}

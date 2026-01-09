@@ -1,13 +1,16 @@
 import React from 'react';
 import SEO from '../components/seo/SEO';
+import { pageSEO } from '../data/seoData';
 
 const PrivacyPolicy = () => {
   return (
     <>
-      <SEO 
-        title="Privacy Policy - BidMetrix.ai"
-        description="Read BidMetrix.ai's privacy policy to understand how we collect, use, and protect your data"
-        keywords="privacy policy, data protection, GDPR compliance"
+        <SEO 
+        title={pageSEO.privacyPolicy.title}
+        description={pageSEO.privacyPolicy.description}
+        keywords={pageSEO.privacyPolicy.keywords}
+        canonical={pageSEO.privacyPolicy.canonical}
+        type={pageSEO.privacyPolicy.ogType}
       />
 
       <div className="section-padding bg-white">

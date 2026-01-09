@@ -14,6 +14,7 @@ import { SkeletonSection, SkeletonHero } from '../components/ui/SkeletonLoader';
 import { useScrollAnimation, useStaggerAnimation } from '../utils/animations';
 import { heroData, missionData, whoWeAreData, corePillarsData, valuesData, leadershipQuote } from '../data/aboutData';
 import { heroImages } from '../data/heroImages';
+import { pageSEO } from '../data/seoData';
 
 const iconMap = { Target, Shield, Users, Award, Globe, TrendingUp };
 
@@ -341,10 +342,12 @@ const AboutUs = () => {
 
   return (
     <>
-      <SEO
-        title="About Us BidMetrix.ai - Empowering Marketers with Intelligent Reach"
-        description="Learn about BidMetrix.ai, the Indian DSP built for precision performance. We democratize access to premium inventory and enterprise-grade AI."
-        keywords="about BidMetrix, DSP company, ad tech India, programmatic advertising platform"
+       <SEO 
+        title={pageSEO.aboutUs.title}
+        description={pageSEO.aboutUs.description}
+        keywords={pageSEO.aboutUs.keywords}
+        canonical={pageSEO.aboutUs.canonical}
+        type={pageSEO.aboutUs.ogType}
       />
 
       {/* Hero Section */}

@@ -10,6 +10,7 @@ import { SkeletonSection, SkeletonHero } from '../components/ui/SkeletonLoader';
 import { useScrollAnimation, useStaggerAnimation } from '../utils/animations';
 import { heroImages } from '../data/heroImages';
 import { heroData, aiBidEngineData, audienceDataStudioData, ctaData } from '../data/technologyData';
+import { pageSEO } from '../data/seoData';
 
 const iconMap = { Brain, Database, Target, Zap, TrendingUp, Shield, Users, CheckCircle };
 
@@ -36,10 +37,12 @@ const Technology = () => {
 
   return (
     <>
-      <SEO 
-        title="Technology - AI Bid Engine & Audience Studio | BidMetrix.ai"
-        description="Powered by advanced AI and machine learning. BidMetrix.ai's intelligent bidding and audience targeting technology delivers superior campaign performance"
-        keywords="AI bidding, machine learning advertising, audience targeting, programmatic technology, DSP platform"
+        <SEO 
+        title={pageSEO.technology.title}
+        description={pageSEO.technology.description}
+        keywords={pageSEO.technology.keywords}
+        canonical={pageSEO.technology.canonical}
+        type={pageSEO.technology.ogType}
       />
 
       {/* Hero Section */}

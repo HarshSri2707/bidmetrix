@@ -15,6 +15,7 @@ import { heroData, problemStatement, uspData, howItWorksData, ctaData } from '..
 import { heroImages } from '../data/heroImages';
 import hero from '../assets/videos/hero.mp4';
 import photo from '../assets/photos/photo.png';
+import { pageSEO } from '../data/seoData';
 
 const iconMap = {
   Target, Shield, BarChart3, Zap, TrendingUp
@@ -311,12 +312,18 @@ const Home = () => {
 
   return (
     <>
-      <SEO 
+      {/* <SEO 
         title="BidMetrix.ai - Intelligent Performance Marketing Platform"
         description="Stop guessing. Start converting with BidMetrix, the DSP built for performance. Precision AI targeting and transparent bidding for measurable ROI."
         keywords="DSP, performance marketing, programmatic advertising, ad tech, user acquisition, retargeting, India"
+      /> */}
+  <SEO 
+        title={pageSEO.home.title}
+        description={pageSEO.home.description}
+        keywords={pageSEO.home.keywords}
+        canonical={pageSEO.home.canonical}
+        type={pageSEO.home.ogType}
       />
-
       {/* Video Hero Section */}
       <Suspense fallback={<SkeletonHero />}>
         <VideoHeroSection

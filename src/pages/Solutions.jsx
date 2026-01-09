@@ -13,6 +13,7 @@ import { SkeletonSection, SkeletonHero } from '../components/ui/SkeletonLoader';
 import { useScrollAnimation, useStaggerAnimation } from '../utils/animations';
 import { heroData, userAcquisitionData, retargetingData, brandSafetyData, ctaData } from '../data/solutionsData';
 import { heroImages } from '../data/heroImages';
+import { pageSEO } from '../data/seoData';
 
 const iconMap = { Target, RefreshCw, Shield, CheckCircle, TrendingUp, Users, Filter };
 
@@ -240,10 +241,12 @@ const Solutions = () => {
 
   return (
     <>
-      <SEO 
-        title="Performance Marketing Solutions - BidMetrix.ai"
-        description="Comprehensive programmatic solutions for user acquisition, retargeting, and brand safety. Drive quality leads and conversions with BidMetrix.ai"
-        keywords="user acquisition, retargeting, conversion optimization, brand safety, anti-fraud, performance marketing solutions"
+       <SEO 
+        title={pageSEO.solutions.title}
+        description={pageSEO.solutions.description}
+        keywords={pageSEO.solutions.keywords}
+        canonical={pageSEO.solutions.canonical}
+        type={pageSEO.solutions.ogType}
       />
 
       {/* Hero */}

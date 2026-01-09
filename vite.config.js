@@ -4,14 +4,23 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   plugins: [react()],
 
+  // Dev server
   server: {
     port: 3000,
     open: true
   },
 
+  // Preview server
+  preview: {
+    port: 4173
+  },
+
   build: {
     outDir: 'dist',
-    sourcemap: true,
+
+    // Production me false better hota hai (SEO + perf)
+    sourcemap: false,
+
     rollupOptions: {
       output: {
         manualChunks: {

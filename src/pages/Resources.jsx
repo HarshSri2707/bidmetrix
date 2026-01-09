@@ -29,6 +29,7 @@ import {
   newsletterData,
   caseStudiesData,
 } from "../data/resourcesData";
+import { pageSEO } from '../data/seoData';
 
 const Resources = () => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -62,10 +63,11 @@ const Resources = () => {
 
   return (
     <>
-      <SEO
-        title="Resources & Insights - BidMetrix.ai Blog"
-        description="Stay updated with the latest trends, insights, and best practices in programmatic advertising and performance marketing"
-        keywords="advertising blog, programmatic insights, marketing resources, ad tech trends, industry news"
+        <SEO 
+        title={pageSEO.resources.title}
+        description={pageSEO.resources.description}
+        keywords={pageSEO.resources.keywords}
+        canonical={pageSEO.resources.canonical}
       />
 
       {/* Hero Section */}
