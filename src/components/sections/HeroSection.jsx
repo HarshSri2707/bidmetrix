@@ -95,10 +95,10 @@ const HeroSection = ({
   return (
     <section className="relative h-96 md:h-[28rem] flex items-center overflow-hidden bg-gray-900">
       
-      {/* Background placeholder (no blank screen) */}
+      {/* ALWAYS visible fallback */}
       <div className="absolute inset-0 bg-gray-900" />
 
-      {/* Hero Image (EAGER + PRIORITY) */}
+      {/* Hero Image (VISIBLE from start) */}
       <img
         src={image}
         alt={title}
@@ -106,19 +106,20 @@ const HeroSection = ({
         fetchpriority="high"
         decoding="async"
         onLoad={() => setLoaded(true)}
+        className="absolute inset-0 w-full h-full object-cover"
+      />
+
+      {/* Overlay fades in AFTER image load */}
+      <div
         className={`
-          absolute inset-0 w-full h-full object-cover
-          transition-opacity duration-700 ease-out
+          absolute inset-0
+          bg-gradient-to-r from-gray-900/60 via-gray-900/40 to-gray-900/20
+          transition-opacity duration-500
           ${loaded ? "opacity-100" : "opacity-0"}
         `}
       />
 
-      {/* Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-r 
-        from-gray-900/60 via-gray-900/40 to-gray-900/20">
-      </div>
-
-      {/* Content */}
+      {/* Content (always visible) */}
       <div className="container-custom relative z-10 px-4 sm:px-6 lg:px-8">
         <div className="text-center md:text-left max-w-3xl mx-auto md:mx-0">
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4">
