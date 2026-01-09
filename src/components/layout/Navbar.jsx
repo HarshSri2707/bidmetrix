@@ -405,7 +405,7 @@ const Navbar = () => {
       <Link to="/" className="flex items-center space-x-2 group">
   {/* Logo Image */}
   <img
-    src="../../assets/logo.png"
+    src="/assets/logo.png"
     alt="logo"
     className="
       w-9 h-9

@@ -18,7 +18,7 @@ export const missionData = {
 export const whoWeAreData = {
   title: "We Are the Engineers of ROI",
   subtitle: "We are not just an ad-tech platform. We are data scientists, media buyers, and digital strategists.",
-  image: "https://images.unsplash.com/photo-1551434678-e076c223a692?w=800&q=80",
+  image: "/assets/about/who-we-are.jpeg",
   content: [
     "At our core, BidMetrix.ai combines human expertise with machine learning. We understand that the digital ecosystem is volatile. Algorithms change, user behaviors shift, and new platforms emerge daily.",
     "Our team stays ahead of these curves so you don't have to. We specialize in high-intent audience connecting. By processing millions of data points per second, our platform bridges the gap between a brand's goal and the user's need, creating a seamless ecosystem where advertising feels like a solution, not an interruption."

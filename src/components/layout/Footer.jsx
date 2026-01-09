@@ -11,10 +11,35 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
           {/* Company Info */}
           <div>
-            <div className="flex items-center space-x-2 mb-4">
-              <div className="w-8 h-8 bg-gradient-to-br from-indigo-600 to-cyan-500 rounded-lg"></div>
-              <span className="text-xl font-bold text-white">BidMetrix.ai</span>
-            </div>
+           <Link to="/" className="flex items-center space-x-2 mb-4 group">
+  {/* Logo Image */}
+  <img
+    src="/assets/logo.png"
+    alt="BidMetrix.ai logo"
+    className="
+      w-8 h-8
+      object-contain
+      rounded-lg
+      transition-transform duration-300
+      group-hover:scale-105
+    "
+  />
+
+  {/* Brand Name */}
+  <span
+    className="
+      text-xl
+      font-bold
+      tracking-tight
+      bg-gradient-to-r from-indigo-400 to-cyan-400
+      bg-clip-text
+      text-transparent
+    "
+  >
+    BidMetrix.ai
+  </span>
+</Link>
+
             <p className="text-gray-400 mb-4">
               The Intelligent DSP for Performance Marketing. Precision targeting, transparent bidding, measurable results.
             </p>
@@ -81,8 +106,8 @@ const Footer = () => {
             <ul className="space-y-3">
               <li className="flex items-start space-x-3">
                 <Mail className="w-5 h-5 text-indigo-400 mt-0.5 flex-shrink-0" />
-                <a href="mailto:hello@bidmetrix.ai" className="hover:text-indigo-400 transition-colors">
-                  hello@bidmetrix.ai
+                <a href="mailto:hello@zentrix.media" className="hover:text-indigo-400 transition-colors">
+                  hello@zentrix.media
                 </a>
               </li>
               <li className="flex items-start space-x-3">

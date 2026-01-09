@@ -9,7 +9,7 @@ export const aiBidEngineData = {
   title: "The Brain Behind the Bid",
   description: "Programmatic advertising happens in milliseconds. Our AI engine analyzes over 50 data points before placing a bid, ensuring every impression has maximum value potential.",
   additionalInfo: "While other platforms rely on basic rules, BidMetrix.ai uses advanced machine learning to predict user intent, calculate optimal bid prices, and prevent ad fatigue—all in real-time.",
-  image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&q=80",
+  image: "/assets/technology/ai-bid-engine.jpeg",
   bidLogic: [
     {
       icon: "Target",
@@ -52,7 +52,7 @@ export const audienceDataStudioData = {
   title: "Know Your Customer Before You Bid",
   description: "Generic targeting wastes budget. BidMetrix.ai's Audience Data Studio combines first-party, third-party, and contextual signals to build precision audience segments.",
   additionalInfo: "From lookalike modeling to behavioral intent, our data platform ensures your ads reach users most likely to convert—not just anyone with a device.",
-  image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80",
+  image: "/assets/technology/audience-data-studio.jpeg",
   capabilities: [
     {
       icon: "Users",

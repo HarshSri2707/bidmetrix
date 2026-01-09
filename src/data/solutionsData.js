@@ -11,7 +11,7 @@ export const userAcquisitionData = {
   icon: "Target",
   title: "Scale Your Customer Base Without Sacrificing Quality",
   description: "User acquisition is not a volume game; it is a value game. At BidMetrix.ai, we understand that a cheap click that doesn't convert is a wasted click. Our highly-intelligent algorithms are trained to distinguish between a \"browser\" and a \"buyer.\"",
-  image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80",
+  image: "/assets/solutions/user-acquisition.jpeg",
   features: [
     {
       icon: "Users",
@@ -44,7 +44,7 @@ export const retargetingData = {
   title: "Re-Engage Users Who Know Your Brand",
   description: "Not every user converts on the first visit. That's where retargeting becomes your secret weapon. BidMetrix.ai helps you stay top-of-mind with users who have already shown interest in your product or service.",
   additionalInfo: "Our advanced frequency capping and sequential messaging ensure your brand stays relevant without becoming annoying. We help you convert browsers into buyers with precision timing and personalized creatives.",
-  image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80",
+  image: "/assets/solutions/retargeting.jpeg",
   features: [
     { title: "Dynamic Creative", description: "Show personalized ads based on browsing behavior" },
     { title: "Cross-Device Tracking", description: "Reach users across all their devices" },
@@ -60,7 +60,7 @@ export const brandSafetyData = {
   title: "Protect Your Budget, Protect Your Brand",
   description: "Ad fraud costs the industry billions annually. Bot traffic, domain spoofing, and viewability fraud can destroy your ROAS before you even know it's happening.",
   additionalInfo: "BidMetrix.ai employs multiple layers of fraud detection to ensure every impression you pay for is real, viewable, and brand-safe. We filter out suspicious traffic before it ever reaches your campaign.",
-  image: "https://images.unsplash.com/photo-1563986768609-322da13575f3?w=800&q=80",
+  image: "/assets/solutions/brand-safety.jpeg",
   protectionFeatures: [
     {
       icon: "Shield",

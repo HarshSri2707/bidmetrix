@@ -12,7 +12,7 @@ export const mobileData = {
   title: "Capture Mobile-First Audiences",
   description: "With over 70% of digital time spent on mobile devices, reaching users on their smartphones and tablets is no longer optional—it's essential.",
   additionalInfo: "BidMetrix.ai provides direct access to premium mobile web and in-app inventory across India's top publishers and app ecosystems. From casual games to news apps to e-commerce platforms, we help you reach engaged users in the moments that matter.",
-  image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&q=80",
+  image: "/assets/channels/mobile.jpeg",
   features: [
     {
       icon: "Smartphone",
@@ -45,7 +45,7 @@ export const videoData = {
   title: "Engage with the Power of Video",
   description: "Video is the most engaging ad format, and Connected TV (CTV) is the fastest-growing digital channel. BidMetrix.ai gives you access to premium video inventory across OTT platforms, streaming services, and traditional publishers.",
   additionalInfo: "From pre-roll to mid-roll to outstream video, our platform optimizes your video campaigns for completion rates, brand lift, and direct response conversions.",
-  image: "https://images.unsplash.com/photo-1522869635100-9f4c5e86aa37?w=800&q=80",
+  image: "/assets/channels/video.jpeg",
   formats: [
     { title: "Pre-Roll & Mid-Roll", description: "Premium video placements on streaming content" },
     { title: "CTV & OTT", description: "Reach cord-cutters on connected TV devices" },
@@ -69,7 +69,7 @@ export const nativeDisplayData = {
   title: "Seamless Ad Experiences That Convert",
   description: "Native advertising blends seamlessly with content, providing a non-intrusive user experience that drives higher engagement. Display advertising remains the workhorse of programmatic, offering massive scale and precise targeting.",
   additionalInfo: "BidMetrix.ai supports all standard IAB display formats plus custom native placements that match the look and feel of premium publisher sites.",
-  image: "https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?w=800&q=80",
+  image: "/assets/channels/native-display.png",
   adFormats: [
     {
       icon: "Layout",
